@@ -1,0 +1,482 @@
+/*================= RESET Y VARIABLES =================*/
+:root {
+  --bradius: 20px;
+  --bshadow: 0 2px 5px rgba(0,0,0,0.1);
+  --colorbtn: rgb(163, 171, 241);
+  --colorcontenedor: rgb(198, 226, 235);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5fbfc;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*================= LAYOUT =================*/
+.layout {
+  display: grid;
+  grid-template-areas:
+    "main sidebar";
+  grid-template-columns:  1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+/*================= HEADER =================*/
+.hero-header {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("ASSETS/FONDO/Coastal trail to the beach.png");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topbar {
+  background-color: rgb(208, 231, 241);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar img {
+  width: 120px;
+}
+
+/* TITULO */
+.titulo {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  flex: 1;
+  margin-left: 130px;
+}
+
+/* BOTONES HEADER */
+.topbar .acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.topbar .acciones a {
+  background-color: var(--colorbtn);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* NAV */
+nav {
+  background-color: var(--colorbtn);
+  box-shadow: var(--bshadow);
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 0 20px;
+  border-radius: var(--bradius);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/*================= HERO =================*/
+.hero {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.hero a {
+  background-color: var(--colorbtn);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/*================= DESTINOS =================*/
+.destinos {
+  grid-area: main;
+  margin: 0 auto;
+}
+
+.destinos h2 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* BOTÓN FUERA DEL GRID */
+.btn-container {
+  
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin: 30px auto;
+
+}
+.btn-container a{
+  text-decoration: none;
+  color: #f5fbfc;
+  background-color: var(--colorbtn);
+}
+
+/*================= TARJETAS =================*/
+.card {
+  background-color: rgb(223, 243, 250);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--bshadow);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.precio {
+  font-weight: bold;
+}
+
+/* BOTÓN TARJETA */
+.card a {
+  display: inline-block;
+  background-color: var(--colorbtn);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+/*================= SIDEBAR =================*/
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(145deg, #d9edf3, #c6e2eb);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar details {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.sidebar summary {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebar p,
+.sidebar ul {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/*================= CONTACTO =================*/
+.contacto {
+  grid-column: 1 / -1;
+  background: var(--colorcontenedor);
+  padding: 20px;
+  border-radius: var(--bradius);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contacto h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BOTONES */
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-enviar {
+  background-color: var(--colorbtn);
+  color: white;
+}
+
+.btn-borrar {
+  background-color: gray;
+  color: white;
+}
+
+/*================= FOOTER =================*/
+footer {
+  background: #1f2f36;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "logo contacto redes"
+    "copi copi copi";
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 140px;
+}
+
+/* CONTACTO */
+.footer-contacto {
+  text-align: center;
+}
+
+.footer-contacto h3 {
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* REDES */
+.footer-redes {
+  text-align: center;
+}
+
+.redes-lista {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.redes-lista img {
+  width: 35px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* HOVER ICONOS */
+.redes-lista img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* COPYRIGHT */
+.footer-copi {
+  grid-area: copi;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+/* MEDIA */
+
+@media (max-width: 768px) {
+
+  /* LAYOUT → todo en columna */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* HEADER */
+  .topbar .container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 10px;;
+  }
+
+
+  .topbar img {
+    width: 80px;
+  }
+
+  .titulo {
+    font-size: 10px;
+    margin-left: 0;
+    margin-bottom: ;
+  }
+
+  /* NAV */
+  .nav-container {
+    margin-top: 10px;;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    max-width: 90%;
+  }
+
+  /* HERO */
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+ 
+
+  /* BOTONES HERO */
+  .hero-btn {
+    flex-direction: column;
+  }
+
+  /* DESTINOS GRID */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* TARJETAS */
+  .card img {
+    height: 200px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    margin-top: 20px;
+  }
+
+  /* FORMULARIO */
+  .contacto {
+    padding: 15px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "contacto"
+      "redes"
+      "copi";
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* LAYOUT */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* NAV */
+  nav {
+    max-width: 80%;
+  }
+
+  /* GRID DESTINOS */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* TARJETAS */
+  .card img {
+    height: 220px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo redes"
+      "contacto contacto"
+      "copi copi";
+  }
+
+}
